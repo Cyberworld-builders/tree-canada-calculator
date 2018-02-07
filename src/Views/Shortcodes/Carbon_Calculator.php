@@ -1,7 +1,5 @@
 <div id="treecanada-carbon-calculator-<?php echo $form_number; ?>" class="treecanada-carbon-calculator">
 
-
-  test123
-
+  <h2>CARBON CALCULATOR</h2>
 
 </div>
