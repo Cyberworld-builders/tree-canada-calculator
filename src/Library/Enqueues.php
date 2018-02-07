@@ -24,7 +24,7 @@
 
 
     public function register_scripts(){
-      wp_register_script('treecanada-bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js');
+      wp_register_script('treecanada-bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js',array('jquery'));
       wp_register_script( 'treecanada-scripts-js',  TREE_CANADA_URL . 'js/scripts.js', array('jquery'));
       wp_register_script( 'treecanada-carbon-calculator-js',  TREE_CANADA_URL . 'js/carbon-calculator.js', array('jquery','treecanada-scripts-js'));
 
