@@ -27,6 +27,8 @@ define('TREE_CANADA_PATH', plugin_dir_path( __FILE__ ));
 define('TREE_CANADA_FILE',  'tree_canada.php');
 define('TREE_CANADA_DEV_MODE', true);
 
+//some new change test
+
 // require_once TREE_CANADA_PATH . 'vendor/autoload.php';
 
 spl_autoload_register( 'tree_canada' );
