@@ -9,6 +9,7 @@
  * Author URI:
  * Text Domain:
  * Domain Path:
+ * GitHub Plugin URI: https://github.com/Cyberworld-builders/tree-canada-calculator
  *
  * Copyright 2017
  * This program is free software; you can redistribute it and/or modify

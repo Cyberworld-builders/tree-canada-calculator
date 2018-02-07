@@ -13,6 +13,8 @@
       //localize standard php variables
       $this->localize_js_vars();
 
+      $this->register_styles();
+
 
     }
 
@@ -21,6 +23,8 @@
 
     public function register_scripts(){
       wp_register_script( 'treecanada-scripts-js',  TREE_CANADA_URL . 'js/scripts.js', array('jquery'));
+      wp_register_script( 'treecanada-carbon-calculator-js',  TREE_CANADA_URL . 'js/carbon-calculator.js', array('jquery','treecanada-scripts-js'));
+
     }
 
     public function enqueue_default_scripts(){
@@ -32,6 +36,10 @@
         'url'=>site_url(),
         'plugin_url'=> TREE_CANADA_URL
       ) );
+    }
+
+    public function register_styles(){
+      wp_register_style('treecanada-carbon-calculator-css', TREE_CANADA_URL . 'css/styles.css');
     }
 
 
