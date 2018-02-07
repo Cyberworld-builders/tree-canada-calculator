@@ -1,6 +1,6 @@
 <?php
 
-    namespace MyPlugin\Library;
+    namespace TreeCanada\Library;
 
     class Settings {
       

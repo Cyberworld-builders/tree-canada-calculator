@@ -1,6 +1,6 @@
 <?php
 
-  namespace MyPlugin\Library;
+  namespace TreeCanada\Library;
 
   class Enqueues {
 
@@ -20,17 +20,17 @@
 
 
     public function register_scripts(){
-      wp_register_script( 'myplugin-scripts-js',  MY_PLUGIN_URL . 'js/scripts.js', array('jquery'));
+      wp_register_script( 'treecanada-scripts-js',  TREE_CANADA_URL . 'js/scripts.js', array('jquery'));
     }
 
     public function enqueue_default_scripts(){
-      wp_enqueue_script( 'myplugin-scripts-js' );
+      wp_enqueue_script( 'treecanada-scripts-js' );
     }
 
     public function localize_js_vars(){
-      wp_localize_script( 'myplugin-scripts-js', 'site_vars', array(
+      wp_localize_script( 'treecanada-scripts-js', 'site_vars', array(
         'url'=>site_url(),
-        'plugin_url'=> MY_PLUGIN_URL
+        'plugin_url'=> TREE_CANADA_URL
       ) );
     }
 

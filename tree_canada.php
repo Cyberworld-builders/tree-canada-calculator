@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Plugin Name: My Custom Plugin
+ * Plugin Name: Tree Canada Custom Plugin
  * Plugin URI: ''
- * Description: My custom plugin.
+ * Description: Custom plugin for Tree Canada. Creates a calculator for tree to carbon ratios.
  * Version: 0.1
  * Author: Jay Long
  * Author URI:
@@ -21,18 +21,18 @@
  * GNU General Public License for more details.
  */
 
-define('MY_PLUGIN_URL', plugin_dir_url( __FILE__ ));
-define('MY_PLUGIN_PATH', plugin_dir_path( __FILE__ ));
-define('MY_PLUGIN_FILE',  'my_plugin.php');
-define('MY_PLUGIN_DEV_MODE', true);
+define('TREE_CANADA_URL', plugin_dir_url( __FILE__ ));
+define('TREE_CANADA_PATH', plugin_dir_path( __FILE__ ));
+define('TREE_CANADA_FILE',  'tree_canada.php');
+define('TREE_CANADA_DEV_MODE', true);
 
-// require_once MY_PLUGIN_PATH . 'vendor/autoload.php';
+// require_once TREE_CANADA_PATH . 'vendor/autoload.php';
 
-spl_autoload_register( 'my_plugin' );
+spl_autoload_register( 'tree_canada' );
 
-function my_plugin($class) {
+function tree_canada($class) {
 
-    $prefix = "MyPlugin\\";
+    $prefix = "TreeCanada\\";
     $base_dir = __DIR__ . '/src/';
 
     $len = strlen($prefix);
@@ -47,4 +47,4 @@ function my_plugin($class) {
     }
 }
 
-new MyPlugin\My_Plugin;
+new TreeCanada\Tree_Canada;
