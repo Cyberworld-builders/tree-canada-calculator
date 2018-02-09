@@ -1,15 +1,12 @@
+// this is the main sass sheet that gulp compiles into css
 // @import "contact.scss";
 
 .treecanada-carbon-calculator {
-
   .navbar {
-        background-color: #99ccff;
+    background-color: #99ccff;
     border: 0;
   }
   .calculator-container {
-    // background-color: #00a95c;
-    // background-color: #4f5859;
-    // background-color: #333333;
 
     .row.nav-tabs { border: none; }
 
@@ -19,7 +16,6 @@
       color: #fff;
       font-weight: normal;
       font-size: 10pt;
-
       width: 20%;
       padding: 0px;
       margin: none;
@@ -32,12 +28,12 @@
       padding: 15px;
       cursor: pointer;
       color: #fff;
-        font-weight: bold;
-        font-size: 10pt;
-        border-radius: 8px 8px 0px 0px;
-        margin-left: 1px;
-        margin-right: 1px;
-        width: 24.6%;
+      font-weight: bold;
+      font-size: 10pt;
+      border-radius: 8px 8px 0px 0px;
+      margin-left: 1px;
+      margin-right: 1px;
+      width: 24.6%;
     }
 
     div.nav-item.active {
@@ -45,7 +41,6 @@
       background-color: #fff;
       border: 2px solid #00a95c;
       border-bottom: 3px solid #fff;
-
     }
 
     div.nav-item:hover{
@@ -60,18 +55,14 @@
         margin-left: -14px;
         margin-right: -13px;
         border: 2px solid #00a95c;
-
         .tab-pane {
           padding: 5px 15px 15px 15px;
         }
-
         .form-control {
           margin-top: 15px;
         }
-
         .btn { color: #fff; border-color: #00FF8B; background-color: #00a95c; }
         .btn-primary { height: 55px; }
-
     }
 
   }

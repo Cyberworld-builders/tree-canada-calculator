@@ -27,24 +27,21 @@ define('TREE_CANADA_PATH', plugin_dir_path( __FILE__ ));
 define('TREE_CANADA_FILE',  'tree_canada.php');
 define('TREE_CANADA_DEV_MODE', true);
 
+// this statement is commented because we are not yet using composer packages
 // require_once TREE_CANADA_PATH . 'vendor/autoload.php';
 
 // this is a class bases plugin that autoloads all of the core plugin code which we place into objects. the main plugin class is defined in src/Tree_Canada.php
-
 // all of the plugin classes are autoloaded in the following function.
 
 spl_autoload_register( 'tree_canada' );
 
 function tree_canada($class) {
-
     $prefix = "TreeCanada\\";
     $base_dir = __DIR__ . '/src/';
-
     $len = strlen($prefix);
     if (strncmp($prefix, $class, $len) !== 0) {
         return;
     }
-
     $relative_class = substr($class, $len);
     $file = $base_dir . str_replace('\\', '/', $relative_class) . '.php';
     if (file_exists($file)) {
@@ -52,5 +49,5 @@ function tree_canada($class) {
     }
 }
 
-// instantiate the main plugin class.
+// this instantiates the main plugin class.
 new TreeCanada\Tree_Canada;
