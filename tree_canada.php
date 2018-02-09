@@ -4,7 +4,7 @@
  * Plugin Name: Tree Canada Custom Plugin
  * Plugin URI: ''
  * Description: Custom plugin for Tree Canada. Creates a calculator for tree to carbon ratios.
- * Version: 0.1
+ * Version: 1.0.2
  * Author: Jay Long
  * Author URI:
  * Text Domain:
@@ -27,11 +27,11 @@ define('TREE_CANADA_PATH', plugin_dir_path( __FILE__ ));
 define('TREE_CANADA_FILE',  'tree_canada.php');
 define('TREE_CANADA_DEV_MODE', true);
 
-//some new change test
-
-//some othe rsecond change
-
 // require_once TREE_CANADA_PATH . 'vendor/autoload.php';
+
+// this is a class bases plugin that autoloads all of the core plugin code which we place into objects. the main plugin class is defined in src/Tree_Canada.php
+
+// all of the plugin classes are autoloaded in the following function.
 
 spl_autoload_register( 'tree_canada' );
 
@@ -52,4 +52,5 @@ function tree_canada($class) {
     }
 }
 
+// instantiate the main plugin class.
 new TreeCanada\Tree_Canada;

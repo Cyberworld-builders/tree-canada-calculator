@@ -1,0 +1,53 @@
+.treecanada-carbon-calculator .navbar {
+  background-color: #99ccff;
+  border: 0; }
+
+.treecanada-carbon-calculator .calculator-container {
+  padding: 4px; }
+  .treecanada-carbon-calculator .calculator-container .row.nav-tabs {
+    border: none; }
+  .treecanada-carbon-calculator .calculator-container span.calculator-tab {
+    color: #fff;
+    font-weight: normal;
+    font-size: 10pt;
+    width: 20%;
+    padding: 0px;
+    margin: none; }
+  .treecanada-carbon-calculator .calculator-container div.nav-item {
+    text-align: center;
+    background-color: #00a95c;
+    height: 55px;
+    padding: 15px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    font-size: 10pt;
+    border-radius: 8px 8px 0px 0px;
+    margin-left: 1px;
+    margin-right: 1px;
+    width: 24.6%; }
+  .treecanada-carbon-calculator .calculator-container div.nav-item.active {
+    color: #00a95c;
+    background-color: #fff;
+    border: 2px solid #00a95c;
+    border-bottom: 3px solid #fff; }
+  .treecanada-carbon-calculator .calculator-container div.nav-item:hover {
+    color: #00a95c;
+    background-color: #fff;
+    border: 2px solid #00a95c;
+    border-bottom: 2px solid #fff; }
+  .treecanada-carbon-calculator .calculator-container .calculator-body {
+    margin-top: -2px;
+    margin-left: -14px;
+    margin-right: -13px;
+    border: 2px solid #00a95c; }
+    .treecanada-carbon-calculator .calculator-container .calculator-body .tab-pane {
+      padding: 5px 15px 15px 15px; }
+    .treecanada-carbon-calculator .calculator-container .calculator-body .form-control {
+      margin-top: 15px; }
+    .treecanada-carbon-calculator .calculator-container .calculator-body .btn {
+      color: #fff;
+      border-color: #00FF8B;
+      background-color: #00a95c; }
+    .treecanada-carbon-calculator .calculator-container .calculator-body .btn-primary {
+      height: 55px; }

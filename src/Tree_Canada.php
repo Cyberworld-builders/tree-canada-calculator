@@ -1,5 +1,7 @@
 <?php
 
+// all of the code in this plugin is encapsulated into classes. the fundamental classes that are used in the plugin core are instantiated automatically in this file.
+
 namespace TreeCanada;
 
 use TreeCanada\Library\Settings;

@@ -1,58 +1,128 @@
 <div id="treecanada-carbon-calculator-<?php echo $form_number; ?>" class="treecanada-carbon-calculator">
 
-  <h2>CARBON CALCULATOR</h2>
+  <h2><?php echo $options['calculator_title']; ?></h2>
 
-  <p>
-To use the carbon calculator, input your transportation and energy use details to calculate your emissions in number of tonnes of CO2 (tCO2). To offset your emissions through tree planting, select the province in which you would like to plant your trees and the type of tree you would like to plant. Next, click on “I want to offset my emissions!”
-  </p>
+  <p><?php echo $options['description']; ?></p>
 
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" id="energy-tab" data-toggle="tab" href="#energy" role="tab" aria-controls="energy" aria-selected="true">Energy</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="air-transport-tab" data-toggle="tab" href="#air-transport" role="tab" aria-controls="air-transport" aria-selected="false">Air Transport</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="road-vehicles-tab" data-toggle="tab" href="#road-vehicles" role="tab" aria-controls="road-vehicles" aria-selected="false">Road Vehicles</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="other-transport-tab" data-toggle="tab" href="#other-transport" role="tab" aria-controls="other-transport" aria-selected="false">Other Transport</a>
-    </li>
+  <div class="calculator-container">
 
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="energy" role="tabpanel" aria-labelledby="home-tab">
-      <div class="row">
-        <div class="col-md-12">
-          (energy form here)
-        </div>
+
+    <div class="row nav nav-tabs"  id="myTab" role="tablist">
+      <div class="col-md-3 nav-item nav-link calculator-tab active" id="energy-tab" data-toggle="tab" href="#energy" role="tab" aria-controls="energy" aria-selected="true">
+        Energy
       </div>
-    </div>
-    <div class="tab-pane fade" id="air-transport" role="tabpanel" aria-labelledby="air-transport-tab">
-      <div class="row">
-        <div class="col-md-12">
-          (air form here)
-        </div>
+      <div class="col-md-3 nav-item nav-link calculator-tab"  id="air-transport-tab" data-toggle="tab" href="#air-transport" role="tab" aria-controls="air-transport" aria-selected="false">
+        Air Transport
       </div>
-    </div>
-    <div class="tab-pane fade" id="road-vehicles" role="tabpanel" aria-labelledby="road-vehicles-tab">
-      <div class="row">
-        <div class="col-md-12">
-          (road form here)
-        </div>
+      <div class="col-md-3 nav-item nav-link calculator-tab" id="road-vehicles-tab" data-toggle="tab" href="#road-vehicles" role="tab" aria-controls="road-vehicles" aria-selected="false">
+        Road Vehicles
       </div>
-    </div>
-    <div class="tab-pane fade" id="other-transport" role="tabpanel" aria-labelledby="other-transport-tab">
-      <div class="row">
-        <div class="col-md-12">
-          (other form here)
-        </div>
+      <div class="col-md-3 nav-item nav-link calculator-tab"  id="other-transport-tab" data-toggle="tab" href="#other-transport" role="tab" aria-controls="other-transport" aria-selected="false">
+        Other Transport
       </div>
     </div>
 
+    <div class="tab-content calculator-body row" id="myTabContent">
+      <div class="tab-pane fade show active" id="energy" role="tabpanel" aria-labelledby="home-tab">
+        <div class="row">
+          <div class="col-md-12">
+            <form>
+              <div class="form-group">
+                <select class="form-control form-control-lg" id="exampleFormControlSelect1" placeholder="Choose Your Province">
+                  <option>Select your province.</option>
+                  <?php foreach(explode(',',$options['calculator_provinces']) as $province): ?>
+                    <option><?php echo $province; ?></option>
+                  <?php endforeach; ?>
+                </select>
+                <select class="form-control" id="exampleFormControlSelect1" placeholder="Choose Your Province">
+                  <option>Residential</option>
+                  <option>Commercial</option>
+                </select>
+              </div>
+
+              <div id="energy-type-0" class="energy-type">
+                <div class="form-group">
+                  <div class="col-md-5">
+                    <select class="form-control" class="province-input" placeholder="Choose Your Province">
+                      <option>Select energy type.</option>
+                      <?php foreach(explode(',',$options['calculator_energytypes']) as $province): ?>
+                        <option><?php echo $province; ?></option>
+                      <?php endforeach; ?>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <input type="number" class="form-control quantity-input" placeholder="Qty">
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" class="form-control measurement-input" readonly value="kwh">
+                  </div>
+                  <div class="col-md-2">
+                    <button class="btn btn-secondary form-control add-dynamic" data-template="energy-type-template" data-name="energy-type" data-count="0"><i class="fa fa-plus"></i></button>
+                  </div>
+                </div>
+              </div>
+
+              <div id="energy-type-template" class="energy-type hide">
+                <div class="form-group">
+                  <div class="col-md-5">
+                    <select class="form-control" class="province-input" placeholder="Choose Your Province">
+                      <option>Select energy type.</option>
+                      <?php foreach(explode(',',$options['calculator_energytypes']) as $province): ?>
+                        <option><?php echo $province; ?></option>
+                      <?php endforeach; ?>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <input type="number" class="form-control quantity-input" placeholder="Qty">
+                  </div>
+                  <div class="col-md-2">
+                    <input type="text" class="form-control measurement-input" readonly value="kwh">
+                  </div>
+                  <div class="col-md-2">
+                    <button class="btn btn-secondary form-control remove-dynamic"><i class="fa fa-minus"></i></button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <button type="submit" class="btn btn-block btn-primary mb-2 form-control">CALCULATE</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="air-transport" role="tabpanel" aria-labelledby="air-transport-tab">
+        <div class="row">
+          <div class="col-md-12">
+            (air form here)
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="road-vehicles" role="tabpanel" aria-labelledby="road-vehicles-tab">
+        <div class="row">
+          <div class="col-md-12">
+            (road form here)
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="other-transport" role="tabpanel" aria-labelledby="other-transport-tab">
+        <div class="row">
+          <div class="col-md-12">
+            (other form here)
+          </div>
+        </div>
+      </div>
+
+
+    </div>
 
   </div>
+
+
 
   <p><span>Tree Canada’s carbon calculator is based on Natural Resources Canada’s Carbon Budget Model of the Canadian Forest Sector (CBM-CFS3)<sup>1</sup> and on emission factors from the Government of Canada and the UK Government. <sup>2, 3, 4, 5</sup>  </span></p>
   <p><span>Please note that if Tree Canada is unable to plant the selected tree species in the coming spring, Tree Canada will substitute one that will sequester a similar amount of carbon over 100 years.</span></p>
