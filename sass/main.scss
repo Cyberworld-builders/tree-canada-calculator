@@ -40,15 +40,18 @@
       color: #00a95c;
       background-color: #fff;
       border: 2px solid #00a95c;
-      border-bottom: 3px solid #fff;
+      border-bottom: none;
+
     }
 
     div.nav-item:hover{
       color: #00a95c;
       background-color: #fff;
       border: 2px solid #00a95c;
-      border-bottom: 2px solid #fff;
+      border-bottom: none;
     }
+
+
 
     .calculator-body {
         margin-top: -2px;
@@ -63,8 +66,18 @@
         }
         .btn { color: #fff; border-color: #00FF8B; background-color: #00a95c; }
         .btn-primary { height: 55px; }
+
+        .flight-distance {
+          text-align:center;
+          // background-color: #30FF7C;
+          padding-top: 15px;
+        }
+
+
     }
 
   }
+
+  .hyperlink { cursor: pointer; text-decoration: underline;}
 
 }

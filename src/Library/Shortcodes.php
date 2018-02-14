@@ -9,15 +9,32 @@
   // any css styles or javascript needs to be placed in a proper file in the css/ and js/ folders respectively.
   // they then must be registered in src/Library/Enqueues.php in accordance with wordpress enqueue standards. DO NOT jam styles and scripts into your themes header.php or footer.php
   // all html markup needs to be placed into the view template file referenced in the include. back end developers should not be echoing html nor should front end developers be querying sql statements
-  // output buffer and return your view template. DO NOT echo. 
+  // output buffer and return your view template. DO NOT echo.
 
   class Shortcodes {
     public function __construct(){
       // define all of our shortcodes. right now we just have the one.
       add_shortcode('treecanada_carbon_calculator',array($this, 'carbon_calculator'));
+      add_shortcode('treecanada_old_calculator',array($this, 'old_calculator'));
+
     }
 
     // the following functions handle what happens when the respective shortcode is used
+
+    public function old_calculator(){
+      $options = get_option('treecanada');
+      wp_enqueue_style('treecanada-old-calculator-css');
+      wp_enqueue_script('treecanada-hashchange-js');
+      wp_enqueue_script('treecanada-easytabs-js');
+      wp_enqueue_script('treecanada-old-calculator-js');
+      $lang = 'en';
+      $tool_name_calc = site_url() . '/wp-json/treecanada/v1/factors';
+      $tool_name_shop  = site_url() . '/wp-json/treecanada/v1/controls';
+      wp_localize_script( 'treecanada-scripts-js', 'lang', 'en');
+      ob_start();
+      include TREE_CANADA_PATH . 'src/Views/Shortcodes/Old_Calculator.php';
+      return ob_get_clean();
+    }
 
     public function carbon_calculator($atts){
 

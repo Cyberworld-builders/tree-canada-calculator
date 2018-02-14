@@ -47,6 +47,21 @@
           ]
         );
         add_settings_field(
+          'trees_needed_factor',
+          __( 'Trees Needed Factor', 'treecanada' ),
+          array($this,'field_basic_cb'),
+          'treecanada',
+          'treecanada_section_options',
+          [
+          'label_for' => 'trees_needed_factor',
+          'class' => 'treecanada_row',
+          'treecanada_custom_data' => 'custom',
+          'description' =>  "The factor used to determine trees needed based on location and species.",
+          'size'  =>  "small"
+          ]
+        );
+
+        add_settings_field(
           'calculator_provinces',
           __( 'Provinces', 'treecanada' ),
           array($this,'field_basic_cb'),
@@ -227,7 +242,7 @@
            </div>
          <?php
          $options = get_option('treecanada');
-         var_dump($options);
+         echo "<pre>"; var_dump($options);
       }
 
     }

@@ -28,12 +28,16 @@
       wp_register_script( 'treecanada-bootstrap-js', TREE_CANADA_URL . 'bootstrap/js/bootstrap.min.js',array('jquery'));
       wp_register_script( 'treecanada-scripts-js',  TREE_CANADA_URL . 'js/scripts.js', array('jquery'));
       wp_register_script( 'treecanada-carbon-calculator-js',  TREE_CANADA_URL . 'js/carbon-calculator.js', array('jquery','treecanada-scripts-js'));
+      wp_register_script( 'treecanada-old-calculator-js',  TREE_CANADA_URL . 'js/old-calculator.js', array('jquery','treecanada-scripts-js','treecanada-easytabs-js','treecanada-hashchange-js'));
+      wp_register_script( 'treecanada-easytabs-js',  TREE_CANADA_URL . 'js/jquery.easytabs.min.js', array('jquery','treecanada-scripts-js'));
+      wp_register_script( 'treecanada-hashchange-js',  TREE_CANADA_URL . 'js/jquery.hashchange.min.js', array('jquery','treecanada-scripts-js'));
       wp_register_script( 'fontawesome-js',  TREE_CANADA_URL . 'js/fontawesome-all.js');
     }
 
     public function register_styles(){
       wp_register_style('treecanada-bootstrap-css', TREE_CANADA_URL . 'bootstrap/css/bootstrap.min.css');
       wp_register_style('treecanada-carbon-calculator-css', TREE_CANADA_URL . 'css/styles.css');
+      wp_register_style('treecanada-old-calculator-css', TREE_CANADA_URL . 'css/old-calculator.css');
       wp_register_style('treecanada-main-css', TREE_CANADA_URL . 'css/main.css');
       wp_register_style('fontawesome-css', TREE_CANADA_URL . 'css/fa-svg-with-js.css');
     }
@@ -47,7 +51,8 @@
     public function localize_js_vars(){
       wp_localize_script( 'treecanada-scripts-js', 'site_vars', array(
         'url'=>site_url(),
-        'plugin_url'=> TREE_CANADA_URL
+        'plugin_url'=> TREE_CANADA_URL,
+        'rest_base' =>  '/wp-json/treecanada/v1/',
       ) );
     }
 

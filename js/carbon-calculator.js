@@ -1,9 +1,15 @@
 jQuery(document).ready(function($){
-  $('.nav-item').click(function(){
+
+  $('.nav-item').click(function(e){
     $('.nav-item').removeClass('active');
     $(this).addClass('active');
+    $('.tab-pane').removeClass('show');
+    $('.tab-pane').addClass('hide');
+    $('#' + $(this).attr('aria-controls')).addClass('show');
   });
-  $('#energy-tab').click();
+
+  $('#road-vehicles-tab').click();
+
   $('.add-dynamic').click(function(e){
     e.preventDefault();
     var template = $('#' + $(this).data('template'));
@@ -22,5 +28,14 @@ jQuery(document).ready(function($){
         $(this).parent().parent().remove();
       });
     $(this).data('count',increment);
+    $('.need-id').each(function(){
+      var default_id = $(this).attr('id');
+      $(this).attr('id',default_id + increment);
+      $(this).removeClass('need-id');
+    });
+
   });
+
+  $('.hyperlink').click(function(){ window.open($(this).data('url')); });
+
 });

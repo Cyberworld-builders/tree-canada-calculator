@@ -7,6 +7,10 @@ namespace TreeCanada;
 use TreeCanada\Library\Settings;
 use TreeCanada\Library\Enqueues;
 use TreeCanada\Library\Shortcodes;
+use TreeCanada\Library\Rest;
+
+
+use TreeCanada\Library\Post_Types\Factor as Factor;
 
 class Tree_Canada {
 
@@ -28,6 +32,8 @@ class Tree_Canada {
     new Settings;
     new Enqueues;
     new Shortcodes;
+    new Rest;
+    new Factor;
 	}
 
 }
