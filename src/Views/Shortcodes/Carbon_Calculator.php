@@ -26,16 +26,27 @@
             <form>
 
               <div class="form-group">
-                <select class="form-control form-control-lg" id="emissions-province" placeholder="Choose Your Province">
-                  <option>Select your province.</option>
-                  <?php foreach(explode(',',$options['calculator_provinces']) as $province): ?>
-                    <option><?php echo $province; ?></option>
-                  <?php endforeach; ?>
-                </select>
-                <select class="form-control" id="emissions-residential" placeholder="Choose Your Province">
-                  <option>Residential</option>
-                  <option>Commercial</option>
-                </select>
+
+                <div class="col-md-6">
+                  <select class="form-control form-control-lg" id="emissions-province" placeholder="Choose Your Province">
+                    <option>Select your province.</option>
+                    <?php foreach(explode(',',$options['calculator_provinces']) as $province): ?>
+                      <option><?php echo $province; ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <select class="form-control" id="emissions-residential" placeholder="Choose Your Province">
+                    <option>Residential</option>
+                    <option>Commercial</option>
+                  </select>
+                </div>
+
+
+
+
+
               </div>
 
               <div id="energy-type-0" class="energy-type">
@@ -57,6 +68,7 @@
                   <div class="col-md-2">
                     <button class="btn btn-secondary form-control add-dynamic" data-template="energy-type-template" data-name="energy-type" data-count="0"><i class="fa fa-plus"></i></button>
                   </div>
+                  <div class="col-md-12"><hr class="featurette-divider"></div>
                 </div>
               </div>
 
@@ -79,6 +91,7 @@
                   <div class="col-md-2">
                     <button class="btn btn-secondary form-control remove-dynamic"><i class="fa fa-minus"></i></button>
                   </div>
+                  <div class="col-md-12"><hr class="featurette-divider"></div>
                 </div>
               </div>
 
@@ -129,6 +142,7 @@
                   <div class="col-md-2">
                     <button class="btn btn-secondary form-control add-dynamic" data-template="air-trip-template" data-name="air-trip" data-count="0"><i class="fa fa-plus"></i></button>
                   </div>
+                  <div class="col-md-12"><hr class="featurette-divider"></div>
                 </div>
               </div>
 
@@ -157,6 +171,7 @@
                   <div class="col-md-2">
                     <button class="btn btn-secondary form-control remove-dynamic"><i class="fa fa-minus"></i></button>
                   </div>
+                  <div class="col-md-12"><hr class="featurette-divider"></div>
                 </div>
               </div>
 
@@ -215,6 +230,7 @@
                   <div class="col-md-2">
                     <button class="btn btn-secondary form-control add-dynamic" data-template="road-vehicles-template" data-name="road-vehicles" data-count="0"><i class="fa fa-plus"></i></button>
                   </div>
+                  <div class="col-md-12"><hr class="featurette-divider"></div>
                 </div>
               </div>
 
@@ -247,6 +263,7 @@
                   <div class="col-md-2">
                     <button class="btn btn-secondary form-control remove-dynamic"><i class="fa fa-minus"></i></button>
                   </div>
+                  <div class="col-md-12"><hr class="featurette-divider"></div>
                 </div>
               </div>
 
@@ -293,10 +310,15 @@
                   <div class="col-md-2">
                     <button class="btn btn-secondary form-control add-dynamic" data-template="other-transport-template" data-name="other-transport" data-count="0"><i class="fa fa-plus"></i></button>
                   </div>
+
+                  <div class="col-md-12"><hr class="separator"></div>
+
+
                 </div>
               </div>
 
               <div id="other-transport-template" class="other-transport hide">
+
                 <div class="form-group">
 
                   <div class="col-md-5">
@@ -315,9 +337,13 @@
 
 
                   <div class="col-md-2">
+
                     <button class="btn btn-secondary form-control remove-dynamic"><i class="fa fa-minus"></i></button>
                   </div>
+
+                  <div class="col-md-12"><hr class="featurette-divider"></div>
                 </div>
+
               </div>
 
               <div class="row">

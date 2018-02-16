@@ -22,6 +22,14 @@
       // it's always nice to make some basic php system variables available in the javascript. be careful, though. all this data is exposed to the dom
       $this->localize_js_vars();
 
+
+
+      add_action( 'admin_init', array($this,'deregister_admin_styles') );
+
+    }
+
+    public function deregister_admin_styles(){
+      wp_deregister_style('treecanada-bootstrap-css');
     }
 
     public function register_scripts(){

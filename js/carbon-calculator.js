@@ -8,7 +8,7 @@ jQuery(document).ready(function($){
     $('#' + $(this).attr('aria-controls')).addClass('show');
   });
 
-  $('#road-vehicles-tab').click();
+  $('#other-transport-tab').click();
 
   $('.add-dynamic').click(function(e){
     e.preventDefault();
@@ -32,6 +32,10 @@ jQuery(document).ready(function($){
       var default_id = $(this).attr('id');
       $(this).attr('id',default_id + increment);
       $(this).removeClass('need-id');
+      if($(this).attr('for').length != -1){
+        var default_for = $(this).attr('for');
+        $(this).attr('for',default_for + increment);
+      }
     });
 
   });

@@ -17,6 +17,8 @@
       add_shortcode('treecanada_carbon_calculator',array($this, 'carbon_calculator'));
       add_shortcode('treecanada_old_calculator',array($this, 'old_calculator'));
 
+      add_shortcode('treecanada_test_calculator',array($this,'test_calculator'));
+
     }
 
     // the following functions handle what happens when the respective shortcode is used
@@ -53,6 +55,11 @@
       include TREE_CANADA_PATH . 'src/Views/Shortcodes/Carbon_Calculator.php';
       return ob_get_clean();
 
+    }
+
+    public function test_calculator($atts){
+      $calc = get_post($atts['id']);
+      include TREE_CANADA_PATH . 'src/Views/Shortcodes/Test_Calculator.php';
     }
 
   }

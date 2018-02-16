@@ -6,11 +6,19 @@ namespace TreeCanada;
 
 use TreeCanada\Library\Settings;
 use TreeCanada\Library\Enqueues;
+use TreeCanada\Library\Utilities;
+
 use TreeCanada\Library\Shortcodes;
+
 use TreeCanada\Library\Rest;
 
+use TreeCanada\Library\Dependencies\Acf;
 
-use TreeCanada\Library\Post_Types\Factor as Factor;
+// use TreeCanada\Library\Post_Types\Factor as Factor;
+use TreeCanada\Library\Post_Types\Calculator as Calculator;
+use TreeCanada\Library\Post_Types\Energy_Type as Energy_Type;
+
+
 
 class Tree_Canada {
 
@@ -29,11 +37,21 @@ class Tree_Canada {
 	}
 
 	protected function _init(){
+
     new Settings;
     new Enqueues;
+    new Utilities;
+
     new Shortcodes;
+
     new Rest;
-    new Factor;
+
+    // new Factor;
+    new Calculator;
+    new Energy_Type;
+
+
+    // new Acf;
 	}
 
 }
