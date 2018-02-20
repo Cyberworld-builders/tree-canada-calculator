@@ -2,22 +2,22 @@
 
   namespace TreeCanada\Library\Post_Types;
 
-  class Energy_Type {
+  class Transport_Type {
     public function __construct(){
       add_action( 'init', array($this,'create_post_type') );
       add_action( 'save_post', array($this,'save_meta'), 1, 2 );
     }
     public function create_post_type(){
-      register_post_type( 'energytype',
+      register_post_type( 'transporttype',
         array(
           'labels' => array(
-            'name' => __( 'Energy Types' ),
-            'singular_name' => __( 'Energy Type' )
+            'name' => __( 'Transport Types' ),
+            'singular_name' => __( 'Transport Type' )
           ),
           'menu_icon' =>  "dashicons-lightbulb",
           'public' => true,
           'has_archive' => true,
-          'rewrite' => array('slug' => 'energytypes'),
+          'rewrite' => array('slug' => 'transporttypes'),
           'supports' => array(
         		'title',
         		'thumbnail',
@@ -35,10 +35,10 @@
 
     public function add_metaboxes(){
       // add_meta_box(
-      //   'energytype',
+      //   'transporttype',
       //   'Energytype',
-      //   array($this,'meta_energytype'),
-      //   'energytype',
+      //   array($this,'meta_transporttype'),
+      //   'transporttype',
       //   'normal',
       //   'default'
       // );
@@ -48,19 +48,19 @@
       if ( ! current_user_can( 'edit_post', $post_id ) ) {
     		return $post_id;
     	}
-      if ( ! wp_verify_nonce( $_POST['energytype_fields'], basename(__FILE__) ) ) {
+      if ( ! wp_verify_nonce( $_POST['transporttype_fields'], basename(__FILE__) ) ) {
     		return $post_id;
     	}
-      if(isset($_POST['energytype'])){
-        update_post_meta($post_id,'energytype',$_POST['energytype']);
+      if(isset($_POST['transporttype'])){
+        update_post_meta($post_id,'transporttype',$_POST['transporttype']);
       }
     }
 
-    public function meta_energytype(){
+    public function meta_transporttype(){
       global $post;
-      wp_nonce_field( basename( __FILE__ ), 'energytype_fields' );
-      $energytype = get_post_meta( $post->ID, 'energytype', true );
-      echo '<input type="text" name="energytype" value="' . esc_textarea( $energytype )  . '" class="widefat">';
+      wp_nonce_field( basename( __FILE__ ), 'transporttype_fields' );
+      $transporttype = get_post_meta( $post->ID, 'transporttype', true );
+      echo '<input type="text" name="transporttype" value="' . esc_textarea( $transporttype )  . '" class="widefat">';
     }
 
   }

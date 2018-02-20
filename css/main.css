@@ -25,7 +25,10 @@
     border-radius: 8px 8px 0px 0px;
     margin-left: 1px;
     margin-right: 1px;
-    width: 24.6%; }
+    width: 99.5%; }
+    @media (min-width: 900px) {
+      .treecanada-carbon-calculator .calculator-container div.nav-item {
+        width: 24.6%; } }
   .treecanada-carbon-calculator .calculator-container div.nav-item.active {
     color: #00a95c;
     background-color: #fff;

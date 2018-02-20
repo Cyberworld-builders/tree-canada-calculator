@@ -104,7 +104,7 @@
           dataType: "html"
         });
         energy_request.done(function( msg ) {
-          console.log(msg);
+          console.log(msg + "balls");
           if(msg == 'N/A') {
             el.addClass('error')
           } else {
@@ -115,7 +115,6 @@
           calcTotalTCO2();
         });
         energy_request.fail(function( jqXHR, textStatus ) {
-          console.log("test");
           el.addClass('error')
           el.find('input.sub_tco2').val('N/A');
           calcSectionTCO2('energy');

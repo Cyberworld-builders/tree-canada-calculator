@@ -45,6 +45,40 @@
 
       // retrieve all of the tree canada options set from the option menu
       $options = get_option('treecanada');
+      $calc = get_post($atts['id']);
+
+      $provinces = query_posts(array(
+        'post_type' =>  "province",
+        'post_status' =>  "publish"
+      ));
+
+      $energy_types = query_posts(array(
+        'post_type' =>  "energytype",
+        'post_status' =>  "publish"
+      ));
+
+      $air_classes = query_posts(array(
+        'post_type' =>  "airclass",
+        'post_status' =>  "publish"
+      ));
+
+      $road_classes = query_posts(array(
+        'post_type' =>  "roadclass",
+        'post_status' =>  "publish"
+      ));
+
+      $fuel_types = query_posts(array(
+        'post_type' =>  "fueltype",
+        'post_status' =>  "publish"
+      ));
+
+      $transport_types = query_posts(array(
+        'post_type' =>  "transporttype",
+        'post_status' =>  "publish"
+      ));
+
+
+
 
       // enqueue our custom styles and scripts that are unique to this shortcode. there are a few that get enqueued by default. that happens in src/Library/Enqueues.php where these enqueues are actually registered.
       wp_enqueue_style('treecanada-carbon-calculator-css');

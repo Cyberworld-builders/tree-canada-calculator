@@ -2,21 +2,21 @@
 
   namespace TreeCanada\Library\Post_Types;
 
-  class Factor {
+  class Other_Factor {
     public function __construct(){
       add_action( 'init', array($this,'create_post_type') );
       add_action( 'save_post', array($this,'save_meta'), 1, 2 );
     }
     public function create_post_type(){
-      register_post_type( 'factor',
+      register_post_type( 'otherfactor',
         array(
           'labels' => array(
-            'name' => __( 'Factors' ),
-            'singular_name' => __( 'Factor' )
+            'name' => __( 'Other Factors' ),
+            'singular_name' => __( 'Other Factor' )
           ),
           'public' => true,
           'has_archive' => true,
-          'rewrite' => array('slug' => 'factors'),
+          'rewrite' => array('slug' => 'otherfactors'),
           'supports' => array(
         		'title',
         		'thumbnail',
@@ -34,10 +34,10 @@
 
     public function add_metaboxes(){
       add_meta_box(
-        'factor',
-        'Road Factor',
-        array($this,'meta_factor'),
-        'factor',
+        'otherfactor',
+        'Other Factor',
+        array($this,'meta_otherfactor'),
+        'otherfactor',
         'normal',
         'default'
       );
@@ -47,19 +47,19 @@
       if ( ! current_user_can( 'edit_post', $post_id ) ) {
     		return $post_id;
     	}
-      if ( ! wp_verify_nonce( $_POST['factor_fields'], basename(__FILE__) ) ) {
+      if ( ! wp_verify_nonce( $_POST['otherfactor_fields'], basename(__FILE__) ) ) {
     		return $post_id;
     	}
-      if(isset($_POST['factor'])){
-        update_post_meta($post_id,'factor',$_POST['factor']);
+      if(isset($_POST['otherfactor'])){
+        update_post_meta($post_id,'otherfactor',$_POST['otherfactor']);
       }
     }
 
-    public function meta_factor(){
+    public function meta_otherfactor(){
       global $post;
-      wp_nonce_field( basename( __FILE__ ), 'factor_fields' );
-      $factor = get_post_meta( $post->ID, 'factor', true );
-      echo '<input type="text" name="factor" value="' . esc_textarea( $factor )  . '" class="widefat">';
+      wp_nonce_field( basename( __FILE__ ), 'otherfactor_fields' );
+      $otherfactor = get_post_meta( $post->ID, 'otherfactor', true );
+      echo '<input type="text" name="otherfactor" value="' . esc_textarea( $otherfactor )  . '" class="widefat">';
     }
 
   }

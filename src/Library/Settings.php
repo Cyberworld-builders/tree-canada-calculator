@@ -20,134 +20,134 @@
         );
 
         // the following function calls each create an option field, passing the dynamic part of the field into a re-useable function. to add more options, simply repeat this convention
+        // add_settings_field(
+        //   'calculator_title',
+        //   __( 'Calculator Title', 'treecanada' ),
+        //   array($this,'field_basic_cb'),
+        //   'treecanada',
+        //   'treecanada_section_options',
+        //   [
+        //   'label_for' => 'calculator_title',
+        //   'class' => 'treecanada_row',
+        //   'treecanada_custom_data' => 'custom',
+        //   ]
+        // );
+        // add_settings_field(
+        //   'calculator_description',
+        //   __( 'Description', 'treecanada' ),
+        //   array($this,'field_basic_cb'),
+        //   'treecanada',
+        //   'treecanada_section_options',
+        //   [
+        //   'label_for' => 'calculator_description',
+        //   'class' => 'treecanada_row',
+        //   'treecanada_custom_data' => 'custom',
+        //   'description' =>  "The paragraph at the top under the title heading. ",
+        //   'size'  =>  "large"
+        //   ]
+        // );
         add_settings_field(
-          'calculator_title',
-          __( 'Calculator Title', 'treecanada' ),
+          'stems_per_ton',
+          __( 'Stems per Ton', 'treecanada' ),
           array($this,'field_basic_cb'),
           'treecanada',
           'treecanada_section_options',
           [
-          'label_for' => 'calculator_title',
+          'label_for' => 'stems_per_ton',
           'class' => 'treecanada_row',
           'treecanada_custom_data' => 'custom',
-          ]
-        );
-        add_settings_field(
-          'calculator_description',
-          __( 'Description', 'treecanada' ),
-          array($this,'field_basic_cb'),
-          'treecanada',
-          'treecanada_section_options',
-          [
-          'label_for' => 'calculator_description',
-          'class' => 'treecanada_row',
-          'treecanada_custom_data' => 'custom',
-          'description' =>  "The paragraph at the top under the title heading. ",
-          'size'  =>  "large"
-          ]
-        );
-        add_settings_field(
-          'trees_needed_factor',
-          __( 'Trees Needed Factor', 'treecanada' ),
-          array($this,'field_basic_cb'),
-          'treecanada',
-          'treecanada_section_options',
-          [
-          'label_for' => 'trees_needed_factor',
-          'class' => 'treecanada_row',
-          'treecanada_custom_data' => 'custom',
-          'description' =>  "The factor used to determine trees needed based on location and species.",
+          'description' =>  "The old form calculated this based on location and species. We're setting it globally where they all use the same value.",
           'size'  =>  "small"
           ]
         );
 
-        add_settings_field(
-          'calculator_provinces',
-          __( 'Provinces', 'treecanada' ),
-          array($this,'field_basic_cb'),
-          'treecanada',
-          'treecanada_section_options',
-          [
-          'label_for' => 'calculator_provinces',
-          'class' => 'treecanada_row',
-          'treecanada_custom_data' => 'custom',
-          'description' =>  "Comma separated list of provinces. ",
-          'size'  =>  "large"
-          ]
-        );
+        // add_settings_field(
+        //   'calculator_provinces',
+        //   __( 'Provinces', 'treecanada' ),
+        //   array($this,'field_basic_cb'),
+        //   'treecanada',
+        //   'treecanada_section_options',
+        //   [
+        //   'label_for' => 'calculator_provinces',
+        //   'class' => 'treecanada_row',
+        //   'treecanada_custom_data' => 'custom',
+        //   'description' =>  "Comma separated list of provinces. ",
+        //   'size'  =>  "large"
+        //   ]
+        // );
+
+        // add_settings_field(
+        //   'calculator_energytypes',
+        //   __( 'Energy Types', 'treecanada' ),
+        //   array($this,'field_basic_cb'),
+        //   'treecanada',
+        //   'treecanada_section_options',
+        //   [
+        //   'label_for' => 'calculator_energytypes',
+        //   'class' => 'treecanada_row',
+        //   'treecanada_custom_data' => 'custom',
+        //   'description' =>  "Comma separated list of energy types. ",
+        //   'size'  =>  "large"
+        //   ]
+        // );
+
+        // add_settings_field(
+        //   'calculator_airclasses',
+        //   __( 'Air Transportation Classes', 'treecanada' ),
+        //   array($this,'field_basic_cb'),
+        //   'treecanada',
+        //   'treecanada_section_options',
+        //   [
+        //   'label_for' => 'calculator_airclasses',
+        //   'class' => 'treecanada_row',
+        //   'treecanada_custom_data' => 'custom',
+        //   'description' =>  "Comma separated list of air transportation classes. ",
+        //   'size'  =>  "large"
+        //   ]
+        // );
+
+        // add_settings_field(
+        //   'calculator_roadclasses',
+        //   __( 'Road Vehicle Classes', 'treecanada' ),
+        //   array($this,'field_basic_cb'),
+        //   'treecanada',
+        //   'treecanada_section_options',
+        //   [
+        //   'label_for' => 'calculator_roadclasses',
+        //   'class' => 'treecanada_row',
+        //   'treecanada_custom_data' => 'custom',
+        //   'description' =>  "Comma separated list of road vehicle classes. ",
+        //   'size'  =>  "large"
+        //   ]
+        // );
+
+        // add_settings_field(
+        //   'calculator_fueltypes',
+        //   __( 'Road Fuel Types', 'treecanada' ),
+        //   array($this,'field_basic_cb'),
+        //   'treecanada',
+        //   'treecanada_section_options',
+        //   [
+        //   'label_for' => 'calculator_fueltypes',
+        //   'class' => 'treecanada_row',
+        //   'treecanada_custom_data' => 'custom',
+        //   'description' =>  "Comma separated list of road fuel types. ",
+        //   'size'  =>  "large"
+        //   ]
+        // );
 
         add_settings_field(
-          'calculator_energytypes',
-          __( 'Energy Types', 'treecanada' ),
+          'calculator_upliftfactor',
+          __( 'Uplift Factor', 'treecanada' ),
           array($this,'field_basic_cb'),
           'treecanada',
           'treecanada_section_options',
           [
-          'label_for' => 'calculator_energytypes',
+          'label_for' => 'calculator_upliftfactor',
           'class' => 'treecanada_row',
           'treecanada_custom_data' => 'custom',
-          'description' =>  "Comma separated list of energy types. ",
-          'size'  =>  "large"
-          ]
-        );
-
-        add_settings_field(
-          'calculator_airclasses',
-          __( 'Air Transportation Classes', 'treecanada' ),
-          array($this,'field_basic_cb'),
-          'treecanada',
-          'treecanada_section_options',
-          [
-          'label_for' => 'calculator_airclasses',
-          'class' => 'treecanada_row',
-          'treecanada_custom_data' => 'custom',
-          'description' =>  "Comma separated list of air transportation classes. ",
-          'size'  =>  "large"
-          ]
-        );
-
-        add_settings_field(
-          'calculator_roadclasses',
-          __( 'Road Vehicle Classes', 'treecanada' ),
-          array($this,'field_basic_cb'),
-          'treecanada',
-          'treecanada_section_options',
-          [
-          'label_for' => 'calculator_roadclasses',
-          'class' => 'treecanada_row',
-          'treecanada_custom_data' => 'custom',
-          'description' =>  "Comma separated list of road vehicle classes. ",
-          'size'  =>  "large"
-          ]
-        );
-
-        add_settings_field(
-          'calculator_fueltypes',
-          __( 'Road Fuel Types', 'treecanada' ),
-          array($this,'field_basic_cb'),
-          'treecanada',
-          'treecanada_section_options',
-          [
-          'label_for' => 'calculator_fueltypes',
-          'class' => 'treecanada_row',
-          'treecanada_custom_data' => 'custom',
-          'description' =>  "Comma separated list of road fuel types. ",
-          'size'  =>  "large"
-          ]
-        );
-
-        add_settings_field(
-          'calculator_transporttypes',
-          __( 'Other Transport Types', 'treecanada' ),
-          array($this,'field_basic_cb'),
-          'treecanada',
-          'treecanada_section_options',
-          [
-          'label_for' => 'calculator_transporttypes',
-          'class' => 'treecanada_row',
-          'treecanada_custom_data' => 'custom',
-          'description' =>  "Comma separated list of other transport types. ",
-          'size'  =>  "large"
+          'description' =>  "Global uplift factor for air transport form. ",
+          'size'  =>  "small"
           ]
         );
 
@@ -242,7 +242,6 @@
            </div>
          <?php
          $options = get_option('treecanada');
-         echo "<pre>"; var_dump($options);
       }
 
     }
