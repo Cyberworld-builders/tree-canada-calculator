@@ -330,11 +330,25 @@
           </div>
         </div>
       </div>
+
       <div class="total_wrapper row" style="padding: 15px;">
         <div class="col-md-6 text_total"><h1 class="text_total"><?php echo 'TOTAL (tCO2)&nbsp;:';?></h1></div>
         <div class="col-md-6"><span id="total_tco2" style="font-size: 14pt; font-weight: 400;">0</span></div>
       </div>
+
     </div>
+
+    <form action="<?php echo site_url() . "/carbon-emission-offset";?>" name="shop" method="post">
+    	<input type="hidden" name="tco2" value=""  />
+    	<input type="hidden" name="quantity" value=""  />
+    	<input type="hidden" name="carbon_calculator" value="1">
+      <div style="text-align:center;margin-top: 15px;margin-bottom: 15px;">
+        <h1>NUMBER OF TREES NEEDED TO OFFSET YOUR EMISSIONS:<br>(BASED ON tCO2 AS FOUND IN STEPS #1 TO 4)</h1>
+        <span style="margin-left:auto;margin-right:auto;font-size:24pt;font-weight: 500;" class="total_trees_needed_wrapper"><span class="total_trees_needed" id="total_trees_needed">0</span> <?php echo 'tree(s)';?></span><br>
+        <input class="form-control" type="submit" style="color: #fff;font-size: 16pt;height: 55px;" value="I want to offset my emissions!" />
+      </div>
+    </form>
+
   </div>
   <?php echo get_field('footer',$calc->ID,false); ?>
 </div>

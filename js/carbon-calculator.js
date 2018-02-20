@@ -63,12 +63,8 @@ jQuery(document).ready(function($){
 		total_tco2 = total_tco2.toFixed(4);
 		$('span#total_tco2 ').text(total_tco2);
 
-		// calcTreesNeeded();
-		// if(total_tco2 > 0) {
-		// 	$('div.plantation_wrapper').css('display', 'block');
-		// } else {
-		// 	$('div.plantation_wrapper').css('display', 'none');
-		// }
+		calcTreesNeeded();
+
 	}
 
   $('#emissions-energy-submit').click(function(e){
@@ -254,28 +250,22 @@ jQuery(document).ready(function($){
 		});
 	}
   function calcTreesNeeded() {
-		if($('select[name=plantation_province]').val() != '') {
-			if(($('select[name=plantation_province_location]').length && $('select[name=plantation_province_location]').val() != '') || $('select[name=plantation_province_location]').length ==0) {
-				if($('select[name=plantation_province_specy]').length && $('select[name=plantation_province_specy]').val() != '') {
-					var calctrees_request = $.ajax({
-						url: "<?php echo $tool_name_shop;?>",
-						type: "POST",
-						data: { 'method' : 'calc_trees', 'province': $('select[name=plantation_province]').val(), 'location': $('select[name=plantation_province_location]').val(), 'specy': $('select[name=plantation_province_specy]').val(), 'total_tco2': $('#total_tco2').text(), 'lang': '<?php echo $lang;?>' },
-						dataType: "html"
-					});
-					calctrees_request.done(function( msg ) {
-						$('#total_trees_needed').text(msg);
-						if(parseInt(msg) > 0) {
-							$('div.plantation_wrapper div.trees_to_offset').css('display','block');
-						} else {
-							$('div.plantation_wrapper div.trees_to_offset').css('display','none');
-						}
-					});
-					calctrees_request.fail(function( jqXHR, textStatus ) {
-						// Error Management
-					});
+			var calctrees_request = $.ajax({
+				url: site_vars.url + site_vars.rest_base + 'controls/',
+				type: "POST",
+				data: { 'total_tco2': $('#total_tco2').text() },
+				dataType: "html"
+			});
+			calctrees_request.done(function( msg ) {
+				$('#total_trees_needed').text(msg);
+				if(parseInt(msg) > 0) {
+					$('div.plantation_wrapper div.trees_to_offset').css('display','block');
+				} else {
+					$('div.plantation_wrapper div.trees_to_offset').css('display','none');
 				}
-			}
-		}
+			});
+			calctrees_request.fail(function( jqXHR, textStatus ) {
+				// Error Management
+			});
 	}
 });
