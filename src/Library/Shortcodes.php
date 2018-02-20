@@ -15,28 +15,9 @@
     public function __construct(){
       // define all of our shortcodes. right now we just have the one.
       add_shortcode('treecanada_carbon_calculator',array($this, 'carbon_calculator'));
-      add_shortcode('treecanada_old_calculator',array($this, 'old_calculator'));
-
-      add_shortcode('treecanada_test_calculator',array($this,'test_calculator'));
-
     }
 
     // the following functions handle what happens when the respective shortcode is used
-
-    public function old_calculator(){
-      $options = get_option('treecanada');
-      wp_enqueue_style('treecanada-old-calculator-css');
-      wp_enqueue_script('treecanada-hashchange-js');
-      wp_enqueue_script('treecanada-easytabs-js');
-      wp_enqueue_script('treecanada-old-calculator-js');
-      $lang = 'en';
-      $tool_name_calc = site_url() . '/wp-json/treecanada/v1/factors';
-      $tool_name_shop  = site_url() . '/wp-json/treecanada/v1/controls';
-      wp_localize_script( 'treecanada-scripts-js', 'lang', 'en');
-      ob_start();
-      include TREE_CANADA_PATH . 'src/Views/Shortcodes/Old_Calculator.php';
-      return ob_get_clean();
-    }
 
     public function carbon_calculator($atts){
 
@@ -77,9 +58,6 @@
         'post_status' =>  "publish"
       ));
 
-
-
-
       // enqueue our custom styles and scripts that are unique to this shortcode. there are a few that get enqueued by default. that happens in src/Library/Enqueues.php where these enqueues are actually registered.
       wp_enqueue_style('treecanada-carbon-calculator-css');
       wp_enqueue_script('treecanada-carbon-calculator-js');
@@ -89,11 +67,6 @@
       include TREE_CANADA_PATH . 'src/Views/Shortcodes/Carbon_Calculator.php';
       return ob_get_clean();
 
-    }
-
-    public function test_calculator($atts){
-      $calc = get_post($atts['id']);
-      include TREE_CANADA_PATH . 'src/Views/Shortcodes/Test_Calculator.php';
     }
 
   }
