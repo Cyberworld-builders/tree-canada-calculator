@@ -6,7 +6,7 @@ jQuery(document).ready(function($){
     $('.tab-pane').addClass('hide');
     $('#' + $(this).attr('aria-controls')).addClass('show');
   });
-  $('#other-transport-tab').click();
+  $('#energy-tab').click();
   $('.add-dynamic').click(function(e){
     e.preventDefault();
     var template = $('#' + $(this).data('template'));
@@ -34,8 +34,17 @@ jQuery(document).ready(function($){
         $(this).attr('for',default_for + increment);
       }
     });
+    changeUnit();
   });
   $('.hyperlink').click(function(){ window.open($(this).data('url')); });
+
+  changeUnit();
+
+  function changeUnit(){
+    $('select.energy-type').change(function(){
+      $($(this).parent().parent()).find('.measurement-input').val($("option:selected", this).data('unit'));
+    });
+  }
 
   /* SECTION TOTAL TCO2*/
 	function calcSectionTCO2(eType) {
@@ -267,5 +276,7 @@ jQuery(document).ready(function($){
 			calctrees_request.fail(function( jqXHR, textStatus ) {
 				// Error Management
 			});
+      $('.offset-my-emissions').show();
 	}
+
 });

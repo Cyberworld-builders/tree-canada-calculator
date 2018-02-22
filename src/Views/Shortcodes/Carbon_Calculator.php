@@ -46,7 +46,7 @@
                       <option>Select energy type.</option>
                       <?php foreach($energy_types as $key => $energy_type): ?>
                         <?php if($energy_type != ""):  $unit = get_field('unit',$energy_type->ID); ?>
-                        <option value="<?php echo $energy_type->ID; ?>" data-unit="<?php echo $unit; ?>"><?php echo $energy_type->post_title; ?></option>
+                        <option class="energy-type-option" value="<?php echo $energy_type->ID; ?>" data-unit="<?php echo $unit; ?>"><?php echo $energy_type->post_title; ?></option>
                       <?php endif; ?>
                       <?php endforeach; ?>
                     </select>
@@ -55,7 +55,7 @@
                     <input type="number" class="form-control quantity-input" placeholder="Qty">
                   </div>
                   <div class="col-md-2">
-                    <input type="text" class="form-control measurement-input" readonly value="kwh">
+                    <input type="text" class="form-control measurement-input" readonly value="Unit">
                   </div>
                   <div class="col-md-2">
                     <button class="btn btn-secondary form-control add-dynamic" data-template="energy-type-template" data-name="energy-type" data-count="0"><i class="fa fa-plus"></i></button>
@@ -71,7 +71,7 @@
                       <option>Select energy type.</option>
                       <?php foreach($energy_types as $key => $energy_type): ?>
                         <?php if($energy_type != ""):  $unit = get_field('unit',$energy_type->ID); ?>
-                        <option value="<?php echo $energy_type->ID; ?>" data-unit="<?php echo $unit; ?>"><?php echo $energy_type->post_title; ?></option>
+                        <option class="energy-type-option" value="<?php echo $energy_type->ID; ?>" data-unit="<?php echo $unit; ?>"><?php echo $energy_type->post_title; ?></option>
                       <?php endif; ?>
                       <?php endforeach; ?>
                     </select>
@@ -80,7 +80,7 @@
                     <input type="number" class="form-control quantity-input" placeholder="Qty">
                   </div>
                   <div class="col-md-2">
-                    <input type="text" class="form-control measurement-input" readonly value="kwh">
+                    <input type="text" class="form-control measurement-input" readonly value="Unit">
                   </div>
                   <div class="col-md-2">
                     <button class="btn btn-secondary form-control remove-dynamic"><i class="fa fa-minus"></i></button>
@@ -342,7 +342,7 @@
     	<input type="hidden" name="tco2" value=""  />
     	<input type="hidden" name="quantity" value=""  />
     	<input type="hidden" name="carbon_calculator" value="1">
-      <div style="text-align:center;margin-top: 15px;margin-bottom: 15px;">
+      <div class="offset-my-emissions">
         <h1>NUMBER OF TREES NEEDED TO OFFSET YOUR EMISSIONS:<br>(BASED ON tCO2 AS FOUND IN STEPS #1 TO 4)</h1>
         <span style="margin-left:auto;margin-right:auto;font-size:24pt;font-weight: 500;" class="total_trees_needed_wrapper"><span class="total_trees_needed" id="total_trees_needed">0</span> <?php echo 'tree(s)';?></span><br>
         <input class="form-control" type="submit" style="color: #fff;font-size: 16pt;height: 55px;" value="I want to offset my emissions!" />
