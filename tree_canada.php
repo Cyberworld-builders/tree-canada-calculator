@@ -4,7 +4,7 @@
  * Plugin Name: Tree Canada Custom Plugin
  * Plugin URI: ''
  * Description: Custom plugin for Tree Canada. Creates a calculator for tree to carbon ratios.
- * Version: 2.0.1
+ * Version: 2.0.2
  * Author: Jay Long
  * Author URI:
  * Text Domain:
